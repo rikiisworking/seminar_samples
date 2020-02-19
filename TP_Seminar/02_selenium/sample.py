@@ -1,6 +1,8 @@
 # coding: utf-8
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
 import time
 def setup_driver():
     '''setup selenium driver to connect'''
@@ -27,5 +29,20 @@ def test():
     time.sleep(2)
     driver.close()
 
+def test_2():
+    driver = setup_driver()
+    driver.implicitly_wait(2)
+    driver.get("https://search.naver.com/search.naver?where=image&sm=tab_jum&query=cat.com")
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
+    time.sleep(2)
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
+    time.sleep(2)
+    img_elements = driver.find_elements_by_css_selector("a.thumb._thumb > img")
+    img_srcs = [element.get_attribute('src') for element in img_elements]
+    print(len(img_srcs))
+    print(img_srcs)
+    driver.close()
+
 if __name__ == "__main__":
-    test()
+    #test()
+    test_2()

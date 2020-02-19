@@ -40,5 +40,5 @@ def test_post():
 if __name__ == "__main__":
     result_text = test_get()
     test_parsing(result_text)
-    test_post()
+    #test_post()
 

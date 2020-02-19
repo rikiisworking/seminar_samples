@@ -52,8 +52,8 @@ print('hello world')
  
  
 # image를 출력할 수 있는 라이브러리
-from IPython.display import Image
-Image(filename="keyboard_shortcuts.png")
+#from IPython.display import Image
+#Image(filename="keyboard_shortcuts.png")
  
 # 몇 가지 간단한 명령어를 사용해 보자!
  
@@ -150,7 +150,7 @@ print(head+tail)
 # In[ ]:
  
  
-Image(filename="numeric_system.png")
+#Image(filename="numeric_system.png")
  
  
 # In[ ]:
@@ -393,8 +393,8 @@ print(a[1:3])
  
 # In[7]:
  
- 
-a[2] = 'g'
+#it's not allowed to reassign value for tuple
+#a[2] = 'g'
  
  
 # ### List
@@ -472,7 +472,8 @@ print(test)
 # Return index
 test = [1, 2, 3, 4]
 print(test.index(4))
-print(test.index(0))
+#return error for 
+#print(test.index(0))
  
  
 # In[ ]:
